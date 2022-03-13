@@ -1,0 +1,363 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Password Manager</title> 
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'main.js' %}" defer></script>
+    {% tailwind_css %}
+
+    <!-- <script src="{% static 'like_button.js' %}"></script> -->
+    
+</head>
+<body class="bg-indigo-200">
+    <header>
+        <nav class="nav flex flex-wrap items-center justify-between px-4 bg-green-400 ">
+            <div class="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="12.80000000pt" height="11.36000000pt" viewBox="0 0 1280.000000 1136.000000"
+                preserveAspectRatio="xMidYMid meet">
+               <g transform="translate(0.000000,1136.000000) scale(0.100000,-0.100000)"
+               fill="#000000" stroke="none">
+               <path d="M9990 10314 c-789 -575 -1959 -1427 -2600 -1893 -641 -466 -1431
+               -1042 -1757 -1279 l-592 -431 -93 43 c-229 107 -545 201 -843 251 -356 59
+               -815 58 -1177 -5 -604 -104 -1179 -369 -1656 -764 -142 -117 -372 -352 -492
+               -501 -419 -523 -669 -1118 -756 -1800 -28 -213 -25 -634 4 -855 153 -1137 818
+               -2107 1822 -2655 637 -348 1398 -489 2125 -395 1511 196 2723 1334 3014 2830
+               45 232 54 335 57 659 l3 314 413 294 c227 162 419 298 427 302 11 7 -21 72
+               -148 300 -89 160 -159 295 -156 300 4 7 466 335 636 451 4 3 -21 178 -57 390
+               -35 211 -64 388 -64 392 0 4 117 96 260 203 l260 195 482 -211 c266 -116 501
+               -219 523 -228 l41 -18 194 162 c179 149 195 165 192 191 -2 16 -30 202 -63
+               413 -32 211 -59 390 -59 397 0 8 117 102 260 209 l260 195 261 -131 261 -130
+               164 98 c161 96 164 98 159 128 -3 16 -16 136 -30 265 -14 129 -27 247 -30 263
+               -4 25 11 40 192 191 l197 164 392 -196 392 -196 187 124 c103 69 192 128 196
+               131 9 5 -245 2206 -255 2216 -3 3 -92 -57 -198 -134 -1618 -1171 -5670 -4093
+               -5675 -4093 -5 1 -65 101 -135 223 -117 206 -125 223 -110 238 10 9 1304 949
+               2877 2090 1573 1140 2900 2102 2949 2138 74 54 86 66 70 72 -15 6 -460 71
+               -854 124 -33 4 -110 -50 -1470 -1041z m-6089 -3808 c249 -34 503 -98 719 -183
+               253 -99 565 -279 780 -449 140 -111 415 -394 521 -536 329 -441 523 -924 591
+               -1468 17 -137 17 -553 0 -690 -63 -511 -249 -991 -542 -1400 -273 -382 -662
+               -716 -1079 -929 -328 -167 -654 -264 -1046 -312 -129 -16 -511 -16 -640 0
+               -593 72 -1109 286 -1560 646 -128 102 -358 332 -460 460 -361 452 -572 962
+               -646 1560 -18 147 -16 522 5 680 46 359 133 650 291 970 147 299 325 546 569
+               791 521 522 1172 818 1931 878 102 8 454 -3 566 -18z"/>
+               <path d="M3264 6130 c-542 -43 -1064 -250 -1484 -588 -475 -384 -818 -944
+               -940 -1537 -52 -254 -69 -607 -41 -840 114 -924 662 -1700 1486 -2105 188 -92
+               308 -138 488 -185 820 -215 1668 -42 2337 478 125 98 341 310 434 427 306 385
+               493 814 567 1300 26 173 32 532 11 690 -59 435 -201 821 -427 1160 -122 183
+               -194 270 -354 430 -422 419 -948 677 -1540 755 -141 18 -400 26 -537 15z
+               m-371 -2095 c462 -69 812 -421 883 -888 54 -354 -96 -730 -384 -958 -176 -141
+               -367 -213 -593 -226 -293 -16 -558 83 -772 286 -214 205 -327 465 -327 756 0
+               320 143 614 398 816 158 126 312 188 552 223 59 8 152 5 243 -9z"/>
+               </g>
+               </svg>
+
+              <span class="ml-2 font-semibold text-xl tracking-tight">Django Password Manager</span>
+            </div>
+          
+            <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+            <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+              <span class="navicon bg-grey-darkest flex items-center relative"></span>
+            </label>
+          
+            <ul class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
+              <li class="border-t md:border-none">
+                <a href="" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">Home</a>
+              </li>
+
+              {% if request.user.is_anonymous %}
+
+                <li class="border-t md:border-none"><a href="javascript:;" onclick="displayModal('login-modal');" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">Login</a></li>
+                <li class="border-t md:border-none"><a href="javascript:;" onclick="displayModal('signup-modal');" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">SignUp</a></li>
+              
+
+                {% else %}
+
+                <li class="border-t md:border-none" ><a class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker" href="javascript:;" onclick="displayModal('add-password-modal');">Add</a></li>
+
+            
+                <li class="border-t md:border-none"><a  class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker" href="javascript:;" onclick="document.getElementById('logout-btn').click();">Logout</a></li>
+                
+                <form hidden="true" action="." method="POST">
+                    {% csrf_token %}
+                    <input type="submit" id="logout-btn" name="logout">
+                </form>
+
+                <!-- <li><a href="javascript:;" onclick="displayModal('password-modal');">View</a></li> -->
+                {% endif %}
+
+            </ul>
+          </nav>
+    </header>
+
+    <!--Display messages-->
+    {% if messages %}
+      <div class="messages" style="text-align: center;">
+          {% for message in messages %}
+            <p>
+                {% if message.tags == "error" %}
+                  <i class="fa fa-exclamation" aria-hidden="true"></i>
+                  {% else %}
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                {% endif %}
+                &nbsp;{{message}}
+            </p>
+          {% endfor %}
+      </div>
+    {% endif %}
+
+    <!--Confirm email-->
+    {% if code %}
+      <div id="email-verify" class="content-center place-items-center" style="text-align: center;">
+          <form action="." method="POST" role="form">
+              {% csrf_token %}
+
+
+              <div class="w-full justify-center max-w-xs mx-auto">
+              <div class="my-6">
+                <h1 class="text-2xl xl:text-3xl text-center font-extrabold">
+                    Please confirm your email.
+                </h1>
+              </div>
+
+              <input class="md:w-2/3" type="text" name="code" placeholder="Enter the 6 digit code" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-auto py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
+              <input type="text" hidden="true" name="user" value="{{user.username}}">
+              
+              <div class="md:flex justify-center m-6">
+                <div class="md:w-2/3">
+                  <button type="submit" value="Confirm" name="confirm" class="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                    Confirm
+                  </button>
+                </div>
+              </div>
+              </div>
+          </form>
+      </div>
+    {% endif %}
+
+    <!--Modals-->
+    <div class="modals-wrapper">
+        <span id="close-modal" title="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <!--login modal-->
+        <div class="modal" id="login-modal">
+
+            <!-- <div class="mt-12 flex flex-col items-center"> -->
+            <form action="." role="form" method="POST">
+              {% csrf_token %}
+                <div class="my-6">
+                <h1 class="text-2xl xl:text-3xl text-center font-extrabold">
+                    Login for Password Manager
+                  </h1>
+                </div>
+    
+                <div class="md:flex md:items-center mb-6 ">
+                <div class="md:w-1/3">
+                  <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    Username
+                  </label>
+                </div>
+                <div class="md:w-2/3">
+                  <input type="text" name="username" placeholder="username" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name">
+                  <!-- <input type="text" name="username" placeholder="username" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name"> -->
+                </div>
+              </div>
+              <div class="md:flex md:items-center mb-6">     
+                <div class="md:w-1/3">
+                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                      Password
+                    </label>
+                  </div>
+                  <div class="md:w-2/3">
+                    <input type="password" name="password" placeholder="password" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password" >
+                  </div>
+              </div>
+              <div class="md:flex justify-center m-6">
+                <div class="md:w-2/3">
+                  <button value="register" name="login-form" class="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+                    Login
+                  </button>
+                </div>
+              </div>
+                <!-- <h2>Login</h2>
+                <input type="submit" value="login" name="login-form"> -->
+            </form>
+        </div>
+
+        <!--signup modal-->
+        <div class="modal" id="signup-modal">
+            <form class="w-full max-w-sm" action="." role="form" method="POST">
+              <h1 class="text-2xl xl:text-3xl text-center font-extrabold p-4">
+                Sign Up for Password Manager
+              </h1>
+              
+              {% csrf_token %}
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/3">
+                  <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    Full Name
+                  </label>
+                </div>
+                <div class="md:w-2/3">
+                  <input type="text" name="username" placeholder="username" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name">
+                </div>
+              </div>
+            
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/3">
+                  <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                    Email
+                  </label>
+                </div>
+                <div class="md:w-2/3">
+                  <input type="email" name="email" placeholder="email" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password" >
+                </div>
+              </div>
+            
+              <div class="md:flex md:items-center mb-6">     
+                <div class="md:w-1/3">
+                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                      Password
+                    </label>
+                  </div>
+                  <div class="md:w-2/3">
+                    <input type="password" name="password" placeholder="password" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password" >
+                  </div>            
+              </div>
+
+              <div class="md:flex md:items-center mb-6">     
+                  <div class="md:w-1/3">
+                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                      Confirm Password
+                    </label>
+                  </div>
+                  <div class="md:w-2/3">
+                    <input type="password" name="password2" placeholder="confirm password" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password" >
+                  </div>            
+              </div>
+
+              <div class="md:flex md:items-center">
+                <div class="md:w-2/4 mx-2">
+                  <button class="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                    <a href="" >Back</a>
+                  </button>
+                </div>
+                
+                <div class="md:w-2/4 -mx-2 ml-1">
+                  <button value="register" name="signup-form" class="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+                    Sign Up
+                  </button>
+                </div>
+              </div>
+            
+            </form>
+        
+        </div>
+
+        
+
+        <!--add password modal-->
+        <div class="modal" id="add-password-modal">
+
+          <form action="." role="form" method="POST" class="w-full max-w-sm">
+            <h1 class="text-2xl xl:text-3xl text-center font-extrabold p-4">
+              Add Password to Password Manager
+            </h1>
+              
+            {% csrf_token %}
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  URL of Website
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input type="text" name="url" placeholder="url of website" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name">
+              </div>
+            </div>
+            
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                  Email
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input type="email" name="email" placeholder="email" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password">
+              </div>
+            </div>
+
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                  Password
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input type="password" name="password" placeholder="password" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password">
+              </div>
+            </div>
+
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3">
+                <button name="cancel" href="javascript:;" onclick="cancelbtnhide();" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                    Cancel
+                  </button>
+              </div>
+              <div class="md:w-2/3">
+                <button value="save" name="add-password" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+                  Add new password
+                </button>
+              </div>
+            </div>
+          </form>
+        
+        </div>
+
+    </div>
+    </div>
+
+
+    <div id="modals-hide" class="grid grid-cols-3 gap-4">
+        {% for password in passwords %}
+    
+        <div class="bg-white shadow-md rounded-lg px-8 pt-6 m-4 pb-8 mb-4">
+            <img width="50" height="50" class="m-auto" src="{{password.logo}}" alt="">
+            <h3 class="title text-xl mb-8 mx-auto text-center font-bold text-purple-700">{{password.name}}</h3>
+            <div class="mb-4">
+              <label for="something" class="block text-gray-500 font-medium text-sm mb-2">Username</label>
+              <input type="text" value="{{password.email}}" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" />
+            </div>
+            <div class="mb-4">
+              <label for="something" class="block text-gray-500 font-medium text-sm mb-2">Password</label>
+              <input type="password" value="{{password.password}}" name="password-id" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" />
+            </div>
+            <div class="m-auto">
+              <div class="dropdown inline-block m-auto">
+                <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+                  <span class="mr-1">Actions</span>
+
+                </button>
+                <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                  <li class="">
+                    <a href="javascript:;" onclick="document.getElementById('delete-btn{{password.id}}').click();" class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Delete</a>
+                  </li>
+                  <form hidden="true" action="." method="POST">
+                    {% csrf_token %}
+                    <input type="text" hidden="true" name="password-id" value="{{password.id}}">
+                    <input type="submit" id="delete-btn{{password.id}}" name="delete">
+                </form> 
+                </ul>
+              </div>
+            
+            </div>
+        </div>
+        
+        {% endfor %}
+
+</body>
+</html>
